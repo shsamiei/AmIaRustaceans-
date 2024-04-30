@@ -3,15 +3,30 @@
 
 fn main() { 
 
+    let username = String::from("syhsamiei");
+    let email = String::from("syhsamiei@gmail.com");
 
-    let a = [1, 2, 3, 4, 5]; 
-    let slice = &a[1..3]; 
-
-    // println!("{:?}", slice); 
-
-
+    let first_user = build_user(email, username); 
+    println!("the user's email: {}", first_user.email); 
 
 }
+
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+fn build_user(email: String, username: String) -> User {
+    User { 
+        active : true,
+        username: username,
+        email: email,
+        sign_in_count: 1, 
+    }
+}
+
 
 // fn first_word(s: &String) -> &str {
 //     let bytes = s.as_bytes();
