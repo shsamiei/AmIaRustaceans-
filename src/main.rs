@@ -1,10 +1,48 @@
-use std::{arch::aarch64::int32x4_t, io};
+
+
 
 fn main() { 
 
-let reference_to_nothing = dangle(); 
+
+    let a = [1, 2, 3, 4, 5]; 
+    let slice = &a[1..3]; 
+
+    // println!("{:?}", slice); 
+
+
 
 }
+
+// fn first_word(s: &String) -> &str {
+//     let bytes = s.as_bytes();
+//     for (i, &item) in bytes.iter().enumerate() {
+//         if item == b' '{
+//             return &s[..i];
+//         }
+//     }
+//     &s[..] 
+// }
+
+// fn first_word_normal(s: &String) -> usize {
+//     let bytes = s.as_bytes();
+
+//     for (i, &item) in bytes.iter().enumerate() {
+//         if item == b' ' {
+//             return i;
+//         }
+//     }
+
+//     s.len()
+// }
+
+fn print_type_of<T>(_: &T) {
+    println!("{}", std::any::type_name::<T>())
+}
+
+
+
+
+// }
 
 // fn gives_ownership() -> String {
 
@@ -33,12 +71,12 @@ let reference_to_nothing = dangle();
 //     s.push_str(", world"); 
 // }
 
-fn change(some_string: &mut String){
-    some_string.push_str(", World"); 
-    println!("this is my string {}", some_string); 
-}
+// fn change(some_string: &mut String){
+//     some_string.push_str(", World"); 
+//     println!("this is my string {}", some_string); 
+// }
 
-fn dangle() -> String { 
-    let s: String = String::from("Hello"); 
-    s
-}
+// fn dangle() -> String { 
+//     let s: String = String::from("Hello"); 
+//     s
+// }
